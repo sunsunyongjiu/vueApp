@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>华泰万象</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script>
+  	var wgtVer = null;
+	function plusReady(){  
+	    // 获取本地应用资源版本号  
+	    console.log('是我'+plus.push.getClientInfo().clientid)
+	    plus.runtime.getProperty(plus.runtime.appid,function(inf){  
+	        wgtVer=inf.version;  
+	        console.log("当前应用版本：" + wgtVer);  
+	        localStorage.setItem("version", wgtVer);
+	        console.log("=================版本测试=================");  
+	    });  
+	}
+	if(window.plus){  
+	    plusReady();  
+	}else{  
+	    document.addEventListener('plusready',plusReady,false);  
+	    document.addEventListener('plusready',checkUpdate,false);  
+	} 
+
+	var checkUrl="http://192.168.1.169:9203/version/lastest";  
+	function checkUpdate(){  
+		console.log(111111111)
+	    plus.nativeUI.showWaiting("检测更新...");  
+		    
+	    var xhr = new XMLHttpRequest();  
+	    xhr.onreadystatechange = function(){  
+	        switch(xhr.readyState){  
+	            case 4:  
+	            plus.nativeUI.closeWaiting();  
+	            if(xhr.status == 200){  
+	                console.log("检测更新成功：" + xhr.responseText);  
+	            
+	                // 读取最新版本号  
+	                var newVer = JSON.parse(xhr.responseText).data.versionStr;  
+	                console.log("最新版本:" + newVer);  
+	                if(wgtVer && newVer && (wgtVer != newVer)){  
+	                    // H5 plus事件处理,弹出提示信息对话框  
+	                    plus.nativeUI.confirm("检测到新版本,是否更新?", function(e) {  
+	                        if(e.index == 0){  
+	                            console.log("确定！");  
+	                            downWgt(); // 下载升级包  
+	                        }  
+	                    }, "", ["确定", "取消"]);  
+	                }else{  
+	                    plus.nativeUI.alert("无新版本可更新！");  
+	                }  
+	            }else{  
+	                console.log("检测更新失败！");  
+	                plus.nativeUI.alert("检测更新失败！");  
+	            }  
+	            break;  
+	            default:  
+	            break;  
+	        }  
+	    }  
+	    xhr.open('GET',checkUrl);  
+	    xhr.send();  
+	}
+
+	// 下载wgt文件  
+	var wgtUrl = "http://vue.zjh.htwins.cn/H5830E628.wgt";  
+	  
+	function downWgt(){  
+	    plus.nativeUI.showWaiting("下载wgt文件...");  
+	              
+	    plus.downloader.createDownload( wgtUrl, {filename:"_doc/update/"}, function(d,status){  
+	        if ( status == 200 ) {   
+	            console.log("下载wgt成功："+d.filename);  
+	            installWgt(d.filename); // 安装wgt包  
+	        } else {  
+	            console.log("下载wgt失败！");  
+	            plus.nativeUI.alert("下载wgt失败！");  
+	        }  
+	        plus.nativeUI.closeWaiting();  
+	    }).start();  
+	}  
+	  
+	// 更新应用资源  
+	function installWgt(path){  
+	    plus.nativeUI.showWaiting("安装wgt文件...");  
+	    // force:false进行版本号校验，如果将要安装应用的版本号不高于现有应用的版本号则终止安装，并返回安装失败  
+	    plus.runtime.install(path,{force:false},function(){  
+	        plus.nativeUI.closeWaiting();  
+	        console.log("安装wgt文件成功！");  
+	        plus.nativeUI.alert("应用资源更新完成！",function(){  
+	            plus.runtime.restart();  
+	        });  
+	    },function(e){  
+	        plus.nativeUI.closeWaiting();  
+	        console.log("安装wgt文件失败[" + e.code + "]：" + e.message);  
+	        plus.nativeUI.alert("安装wgt文件失败[" + e.code + "]：" + e.message);  
+	    });  
+	}
+
+	// document.addEventListener("plusready", function() {
+ //        // 注册返回按键事件
+ //        plus.key.addEventListener('backbutton', function() {
+ //            // 事件处理
+ //            window.history.back();
+ //        }, false);
+ //    });
+
+    document.addEventListener("plusready", function() {
+        // 注册返回按键事件
+        plus.key.addEventListener('backbutton', function() {
+        // 事件处理
+        	
+	        if(window.location.hash=='#/login'||window.location.hash=='#/Index'){
+	        	
+	        	plus.nativeUI.confirm("退出程序？", function(event) {
+	                if (event.index) {
+	                    plus.runtime.quit();
+	                }
+	            }, null, ["取消", "确定"]);
+	        }else{
+
+	        	 window.history.back();
+	        }
+            
+        }, false);
+    }); 
+  </script>
+</html>

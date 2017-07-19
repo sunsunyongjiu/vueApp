@@ -1,0 +1,394 @@
+{
+	"@platforms": [
+		"android",
+		"iPhone",
+		"iPad"
+	],
+	"id": "H5830E628",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"name": "cn.com.htwins.demo",/*应用名称，程序桌面图标名称*/
+	"version": {
+		"name": "1.0",/*应用版本名称*/
+		"code": ""
+	},
+	"description": "",/*应用描述信息*/
+	"icons": {
+		"72": "icon.png"
+	},
+	"launch_path": "dist/index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"developer": {
+		"name": "",/*开发者名称*/
+		"email": "",/*开发者邮箱地址*/
+		"url": ""
+	},
+	"permissions": {
+		"Accelerometer": {
+			"description": "访问加速度感应器"
+		},
+		"Audio": {
+			"description": "访问麦克风"
+		},
+		"Messaging": {
+			"description": "短彩邮件插件"
+		},
+		"Cache": {
+			"description": "管理应用缓存"
+		},
+		"Camera": {
+			"description": "访问摄像头"
+		},
+		"Console": {
+			"description": "跟踪调试输出日志"
+		},
+		"Contacts": {
+			"description": "访问系统联系人信息"
+		},
+		"Device": {
+			"description": "访问设备信息"
+		},
+		"Downloader": {
+			"description": "文件下载管理"
+		},
+		"Events": {
+			"description": "应用扩展事件"
+		},
+		"File": {
+			"description": "访问本地文件系统"
+		},
+		"Gallery": {
+			"description": "访问系统相册"
+		},
+		"Geolocation": {
+			"description": "访问位置信息"
+		},
+		"Invocation": {
+			"description": "使用Native.js能力"
+		},
+		"Orientation": {
+			"description": "访问方向感应器"
+		},
+		"Proximity": {
+			"description": "访问距离感应器"
+		},
+		"Storage": {
+			"description": "管理应用本地数据"
+		},
+
+		"Uploader": {
+			"description": "管理文件上传任务"
+		},
+		"Runtime": {
+			"description": "访问运行期环境"
+		},
+		"XMLHttpRequest": {
+			"description": "跨域网络访问"
+		},
+		"Zip": {
+			"description": "文件压缩与解压缩"
+		},
+		"Barcode": {
+			"description": "管理二维码扫描插件"
+		},
+		"Maps": {
+			"description": "管理地图插件"
+		},
+		"Speech": {
+			"description": "管理语音识别插件"
+		},
+		"Webview": {
+			"description": "窗口管理"
+		},
+		"NativeUI": {
+			"description": "原生UI控件"
+		},
+		"Navigator": {
+			"description": "浏览器信息"
+		},
+		"NativeObj": {
+			"description": "原生对象"
+		},
+		"Push": {}
+	},
+	"plus": {
+		"splashscreen": {
+			"autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+			"waiting": true
+		},
+		"popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
+		"runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
+		"distribute": {
+			"plugins": {
+				"push": {
+					"igexin": {
+						"appid": "PmilGar5O48XjTsAh0wTi8",
+						"appkey": "qY1Ct053bd8YCuRDGHTp11",
+						"appsecret": "XVFVtcrUNy7Bu2va1wiOh"
+					}
+				}
+			},
+			"apple": {
+				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+				"mobileprovision": "",/*iOS应用打包配置文件*/
+				"password": "",/*iOS应用打包个人证书导入密码*/
+				"p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+				"devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+				"frameworks": []
+			},
+			"google": {
+				"packagename": "",/*Android应用包名，如io.dcloud.HelloH5*/
+				"keystore": "",/*Android应用打包使用的密钥库文件*/
+				"password": "",/*Android应用打包使用密钥库中证书的密码*/
+				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
+				"permissions": [
+					"<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+					"<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+					"<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+					"<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+					"<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+					"<uses-permission android:name=\"android.permission.GET_TASKS\"/>",
+					"<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+					"<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+					"<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+					"<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+					"<uses-feature android:name=\"android.hardware.camera\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+					"<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+					"<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
+					"<uses-permission android:name=\"android.permission.CAMERA\"/>"
+				]
+			},
+			"orientation": [
+				"portrait-primary"
+			],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"icons": {
+				"ios": {
+					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+					"auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+					"iphone": {
+						"normal": "unpackage/res/icons/57x57.png", /*iPhone3/3GS程序图标，分辨率：57x57*/
+						"retina": "unpackage/res/icons/114x114.png", /*iPhone4程序图标，分辨率：114x114*/
+						"retina7": "unpackage/res/icons/120x120.png", /*iPhone4S/5/6程序图标，分辨率：120x120*/
+						"retina8": "unpackage/res/icons/180x180.png", /*iPhone6 Plus程序图标，分辨率：180x180*/
+						"spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone3/3GS Spotlight搜索程序图标，分辨率：29x29*/
+						"spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone4 Spotlight搜索程序图标，分辨率：58x58*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png", /*iPhone4S/5/6 Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone4设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png", /*iPhone4S/5/6设置页面程序图标，分辨率：58x58*/
+						"settings-retina8": "unpackage/res/icons/87x87.png"
+					},
+					"ipad": {
+						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+						"retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+						"normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+						"retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+						"spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+						"spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+						"spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png"
+					}
+				},
+				"android": {
+					"mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+					"ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+					"hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+					"xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+					"xxhdpi": "unpackage/res/icons/144x144.png",
+					"xxxhdpi": "unpackage/res/icons/192x192.png"
+				}
+			},
+			"splashscreen": {
+				"ios": {
+					"iphone": {
+						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
+						"retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": "",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+						"retina47": "",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+						"retina55": "",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+						"retina55l": ""
+					},
+					"ipad": {
+						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": ""
+					}
+				},
+				"android": {
+					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
+					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
+					"hdpi": "", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": ""
+				}
+			}
+		}
+	},
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"static/js/manifest.88ab025378673985dd2d.js",
+					"static/js/vendor.8aa8c3b066d947aba79e.js",
+					"static/css/app.febe67ce3301ae0f6d67594fc6d8e123.css",
+					"static/js/app.ab6817ef846e2e8597ee.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"dist/index.html": {
+				"resources": [
+					"dist/static/js/vendor.95e630130a6935d067f7.js",
+					"dist/static/js/app.c5cc3fb4490089a445fd.js",
+					"dist/static/js/manifest.5c317f985c0bb7c26e48.js",
+					"dist/static/css/app.191bb556300e1e95b88bf91ba92a94a2.css",
+					"dist/static/css/app.a474eace10ca821068972f25ed0f9513.css",
+					"dist/static/js/vendor.eb45775777bd3ad83140.js",
+					"dist/static/js/manifest.9404180462866afb5b74.js",
+					"dist/static/js/app.900db5127eb4958ef66a.js",
+					"dist/static/css/app.64d56ed28ce17280034714de1b4fc6af.css",
+					"dist/static/js/manifest.436ffc1aed0287ee4b01.js",
+					"/dist/static/js/manifest.a0fefe4cef9073f954c4.js",
+					"/dist/static/js/vendor.eb45775777bd3ad83140.js",
+					"/dist/static/js/app.900db5127eb4958ef66a.js",
+					"/dist/static/css/app.11edaf7562c5db6155610fed0c1bc2fd.css",
+					"dist/static/js/manifest.b73164fe6707383876cc.js",
+					"dist/static/js/app.540c482dace163a79f89.js",
+					"dist/static/js/vendor.073b2ce5daed69ea5af2.js",
+					"dist/static/css/app.b1774a7165d1b271e562574042d5411f.css",
+					"dist/static/js/vendor.68fbaa1f96c92df1e70d.js",
+					"dist/static/js/app.4fabefd84dfb6bec73cb.js",
+					"dist/static/js/manifest.93f168651f38c8876194.js",
+					"dist/static/css/app.951768f6ae2e7992451f4541bef5a96a.css",
+					"dist/static/js/manifest.90d4f2118cb23e4b2ff2.js",
+					"dist/static/css/app.dc71eac4e2a7413a6aecc1134e2e0716.css",
+					"dist/static/js/app.f74e2c2666292f7fefb5.js",
+					"dist/static/css/app.b3c21300a2a04abdb8c969969e024839.css",
+					"dist/static/js/app.1c69b539e4e00e0796d0.js",
+					"dist/static/js/manifest.09cbf1d137299ae2a889.js",
+					"dist/static/css/app.f43cedd2d7377e1240284a163afb9618.css",
+					"dist/static/css/app.640e04bb3d08076b814333821ed8ede5.css",
+					"dist/static/js/app.700712dc956647c59b9b.js",
+					"dist/static/js/manifest.ced2fe2893d898e25042.js",
+					"dist/static/js/vendor.660d3390c63c48ac7d82.js",
+					"dist/static/js/manifest.dca9084849c849477b11.js",
+					"dist/static/js/app.02675a4aa39bd8dd521d.js",
+					"dist/static/css/app.d7ca78311433525d6a609f5b39095a1a.css",
+					"dist/static/js/app.5727e3c127a8b3d11bd2.js",
+					"dist/static/js/manifest.8bee1bbd8e9610bc8b93.js",
+					"dist/static/js/app.a3d9e7d586a0d162f973.js",
+					"dist/static/js/manifest.cf0e1123a684df1542de.js",
+					"dist/static/js/vendor.f314c6e47f63cb52347a.js",
+					"dist/static/css/app.5f3528a631f77dd94d455487289df54c.css",
+					"dist/static/js/manifest.ccc653bb670dfb8e7cd0.js",
+					"dist/static/js/app.15c187dbc1f8c182d84a.js",
+					"dist/static/js/manifest.0941210854b5b6ddbaa8.js",
+					"dist/static/js/app.570cab8080d518871a42.js",
+					"dist/static/js/app.fdb8d1f16743b6e34a62.js",
+					"dist/static/js/manifest.17162f3b38810f210061.js",
+					"dist/static/js/app.b6df144b5f0a34a28fa4.js",
+					"dist/static/js/manifest.4c92d4ca847fe8849db5.js",
+					"dist/static/css/app.77c6f51885fe2cb7725ea23b5c6a2abf.css",
+					"dist/static/js/app.c08ac271397a373feb69.js",
+					"dist/static/js/vendor.5c30d425ea228df9e662.js",
+					"dist/static/js/manifest.87af0d4e80e7954a0538.js",
+					"dist/static/css/app.905742c84419b08170282d3679d51da0.css",
+					"dist/static/js/manifest.f930b6007c0c8a057fe1.js",
+					"dist/static/js/app.32b285fae7450dabb0fa.js",
+					"dist/js/manifest.935d519a7450bd91af09.js",
+					"dist/js/app.f13fb9a317c7eff7a54d.js",
+					"dist/app.6a2ff7261fef0698ade961de987cb4a3.css",
+					"dist/js/vendor.5c30d425ea228df9e662.js",
+					"dist/app.c2bbd4030353008ebf08b430e49d783d.css",
+					"dist/js/app.652f8dff4c49d20f070c.js",
+					"dist/js/manifest.09ca737685636bbe0e1e.js",
+					"dist/js/app.d3485e0b82baf2bea073.js",
+					"dist/js/manifest.68d0c1a20fa00ac8cf42.js",
+					"dist/app.dd3c64e44c6fda8ec3984583327e4a83.css",
+					"dist/js/app.2c17e10b39408cdccd65.js",
+					"dist/app.d39b2179077301eeda19aff2eae297a9.css",
+					"dist/js/manifest.5bd492c7b0d6276a3861.js",
+					"dist/js/manifest.39f001917c6f53c10b5e.js",
+					"dist/app.ef77158bb4ab51685f7f09decb3d8acf.css",
+					"dist/js/app.a4cd6b65fc15aeca0607.js",
+					"dist/js/manifest.0df9e241d6a13fde7d93.js",
+					"dist/js/app.8ba772e69ad62f4e6041.js",
+					"dist/js/app.d4325a6495bd1c1f3685.js",
+					"dist/js/manifest.834a7e26e2329c5788d1.js",
+					"dist/js/vendor.46eedf4125e2d842fd57.js",
+					"dist/app.402a75c48b771424750b28b6a474ff09.css",
+					"dist/js/app.d8cf8ecac9fcf4874298.js",
+					"dist/app.58210733db966f4343c43df4fdc34df0.css",
+					"dist/js/manifest.75821b91d365f2b94aa5.js",
+					"dist/js/app.71d4f3a4d8b0ec7b6266.js",
+					"dist/app.21ae6786c2c9ffe343a24477763e8b99.css",
+					"dist/js/vendor.5fb1cc1f71a8572cf3cb.js",
+					"dist/js/manifest.8244e86f2f5fcb8f6351.js",
+					"dist/js/app.0abf3a292cd3f26a2720.js",
+					"dist/js/manifest.fa5bf4a809c99fd85246.js",
+					"dist/app.626d9dbc7f23778a655c1de58c402fef.css",
+					"dist/js/vendor.3e1387849cd5705722d5.js",
+					"dist/js/app.bf92305b0408bffd7a8d.js",
+					"dist/js/manifest.ce13f5452de5f32559a2.js",
+					"dist/app.e0ecaa7218ff05425aa24f9104ba3eac.css",
+					"dist/js/app.e955ae1ec4c86a893a6f.js",
+					"dist/app.fc36c4761f425ac6701bc77c1a108704.css",
+					"dist/js/manifest.0864cb2869dfd1d7ad33.js",
+					"dist/js/app.93424d3c9cb368dc9197.js",
+					"dist/js/manifest.34392af8eaa226593f60.js",
+					"dist/js/vendor.e85e4c76592ed869e5d8.js",
+					"dist/app.9835e4cb000ecd4bd7cac82865d6491b.css",
+					"dist/app.efc3a6d37844308f09e38e2f8e0b4f6e.css",
+					"dist/js/app.787822c1cde302ffcc29.js",
+					"dist/js/manifest.36274c03430dee4f3f0c.js",
+					"dist/js/vendor.9078057ee72a40fdc063.js",
+					"dist/js/vendor.6d5635bf171dc917d632.js",
+					"dist/js/app.48597304aff3f66e20ba.js",
+					"dist/app.44fd7dc22c5d25efbc14f1f7689e6a04.css",
+					"dist/js/manifest.23dc0ac5bca6341c9f62.js",
+					"dist/js/app.63e26fabe244cd2bf0d9.js",
+					"dist/js/manifest.1187f570ca79ad6950bd.js",
+					"dist/js/app.58f4fb370adbcf6a649f.js",
+					"dist/js/vendor.64141fac121a82fc5a48.js",
+					"dist/js/manifest.bc042895cbc3c17fc324.js",
+					"dist/app.968fa690e6b9e50d2c3372760b41ac02.css",
+					"dist/js/manifest.53b33f61b1f0c33f2ee3.js",
+					"dist/app.035c23db22dadc30a42fca85e9e48757.css",
+					"dist/js/app.8da2dd3538928af628d0.js",
+					"dist/js/manifest.efc9c32dd9160bca0dcf.js",
+					"dist/js/app.d6eedd8cf8f0d5b618b6.js"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"static/test.json",
+				"static/js/app.ab6817ef846e2e8597ee.js.map",
+				"static/learn.json",
+				"static/new.json",
+				"static/js/vendor.8aa8c3b066d947aba79e.js.map",
+				"static/js/manifest.88ab025378673985dd2d.js.map",
+				"static/css/app.febe67ce3301ae0f6d67594fc6d8e123.css.map",
+				"static/document.json",
+				"img/index.html"
+			]
+		}
+	}
+}
